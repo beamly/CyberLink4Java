@@ -115,10 +115,15 @@ public class HTTPHeader
 
 	public final static String getValue(String data, String name)
 	{
-		/* Thanks for Stephan Mehlhase (2010-10-26) */
-		StringReader strReader = new StringReader(data);
-		LineNumberReader lineReader = new LineNumberReader(strReader, Math.min(data.length(), MAX_LENGTH));
-		return getValue(lineReader, name);
+		if(data.length() >= 0) {
+			/* Thanks for Stephan Mehlhase (2010-10-26) */
+			StringReader strReader = new StringReader(data);
+			LineNumberReader lineReader = new LineNumberReader(strReader, Math.min(data.length(), MAX_LENGTH));
+			return getValue(lineReader, name);
+		} else {
+			Debug.warning("HTTPHeader.getValue on zero-length string");
+			return "";
+		}
 	}
 
 	public final static String getValue(byte[] data, String name)
