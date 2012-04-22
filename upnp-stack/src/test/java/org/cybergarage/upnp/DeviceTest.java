@@ -95,12 +95,25 @@ public class DeviceTest extends TestCase
     
         /* X:serviceURLStr O:baseURLStr -:locationURLStr */
         devAbsUrl = dev.getAbsoluteURL("/serviceURL", "http://192.168.0.2:80/device/", null);
-        assertTrue(devAbsUrl, devAbsUrl.equals("http://192.168.0.2:80/device/serviceURL"));
+        assertTrue(devAbsUrl, devAbsUrl.equals("http://192.168.0.2:80/serviceURL"));
     
         /* X:serviceURLStr O:baseURLStr -:locationURLStr */
         devAbsUrl = dev.getAbsoluteURL("serviceURL", "http://192.168.0.2:80/device/", null);
         assertTrue(devAbsUrl, devAbsUrl.equals("http://192.168.0.2:80/device/serviceURL"));
+ 
+        /********************************************************************************
+        * X:serviceURLStr O:baseURLStr -:locationURLStr (CASE02)
+        ********************************************************************************/
+    
+        /* X:serviceURLStr O:baseURLStr -:locationURLStr */
+        devAbsUrl = dev.getAbsoluteURL("/serviceURL", "http://192.168.0.2:80/device/device.xml", null);
+        assertTrue(devAbsUrl, devAbsUrl.equals("http://192.168.0.2:80/serviceURL"));
+    
+        /* X:serviceURLStr O:baseURLStr -:locationURLStr */
+        devAbsUrl = dev.getAbsoluteURL("serviceURL", "http://192.168.0.2:80/device/device.xml", null);
+        assertTrue(devAbsUrl, devAbsUrl.equals("http://192.168.0.2:80/device/serviceURL"));
 
+        
         /********************************************************************************
         * X:serviceURLStr -:baseURLStr O:locationURLStr (CASE01)
         ********************************************************************************/
