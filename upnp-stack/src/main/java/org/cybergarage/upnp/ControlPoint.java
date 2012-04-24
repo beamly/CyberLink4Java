@@ -250,7 +250,15 @@ public class ControlPoint implements HTTPRequestListener
 		
 		String location = ssdpPacket.getLocation();
 		try {	
-			URL locationUrl = new URL(location);
+			URL locationUrl = null;
+			try {
+				locationUrl = new URL(location);
+			} catch(MalformedURLException ex) {
+				// If no protocol is given, attempt to prefix with http://
+				if(location.indexOf("://") == -1) {
+						locationUrl = new URL(String.format("http://%s", location));
+				}
+			}
 			Parser parser = UPnP.getXMLParser();
 			Node rootNode = parser.parse(locationUrl);
 			Device rootDev = getDevice(rootNode);
