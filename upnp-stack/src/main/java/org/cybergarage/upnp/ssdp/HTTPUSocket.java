@@ -199,8 +199,16 @@ public class HTTPUSocket
 			ssdpUniSock.send(dgmPacket);
 		}
 		catch (Exception e) {
-			Debug.warning("addr = " +ssdpUniSock.getLocalAddress().getHostName());
-			Debug.warning("port = " + ssdpUniSock.getLocalPort());
+			if(ssdpUniSock != null) {
+				if(ssdpUniSock.getLocalAddress() != null ) {
+					Debug.warning("HTTPUSocket::post addr = " +ssdpUniSock.getLocalAddress().getHostName());
+				} else {
+					Debug.warning("HTTPUSocket::post addr = <NULL>");					
+				}
+				Debug.warning("HTTPUSocket::post port = " + ssdpUniSock.getLocalPort());
+			} else {
+				Debug.warning("HTTPUSocket::post ssdpUniSock = <NULL>");									
+			}
 			Debug.warning(e);
 			return false;
 		}
