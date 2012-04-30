@@ -386,6 +386,11 @@ public class HTTPRequest extends HTTPPacket
 	////////////////////////////////////////////////
 	
 	private Socket postSocket = null;
+	private int connectTimeout = HTTPServer.DEFAULT_TIMEOUT;
+	
+	public void setTimeout(int timeout) {
+		connectTimeout = timeout;
+	}
 	
 	public HTTPResponse post(String host, int port, boolean isKeepAlive)
 	{
@@ -404,7 +409,7 @@ public class HTTPRequest extends HTTPPacket
  			if (postSocket == null){
  				// Thanks for Hao Hu 
 				postSocket = new Socket();
-				postSocket.connect(new InetSocketAddress(host, port), HTTPServer.DEFAULT_TIMEOUT);
+				postSocket.connect(new InetSocketAddress(host, port), connectTimeout);
  			}
 
 			out = postSocket.getOutputStream();

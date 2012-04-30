@@ -32,6 +32,10 @@ import org.cybergarage.http.HTTPResponse;
 
 public abstract class Parser 
 {
+	
+	private int connectTimeout = 0;
+	private int readTimeout = 0;
+	
 	////////////////////////////////////////////////
 	//	Constructor
 	////////////////////////////////////////////////
@@ -61,6 +65,8 @@ public abstract class Parser
 		
 		try {
 	 		HttpURLConnection urlCon = (HttpURLConnection)locationURL.openConnection();
+	 		urlCon.setConnectTimeout(connectTimeout);
+	 		urlCon.setReadTimeout(readTimeout);
 			urlCon.setRequestMethod("GET");
 			urlCon.setRequestProperty(HTTP.CONTENT_LENGTH,"0");
 			if (host != null)
@@ -80,6 +86,7 @@ public abstract class Parser
 		}
 
 		HTTPRequest httpReq = new HTTPRequest();
+		httpReq.setTimeout(connectTimeout);
 		httpReq.setMethod(HTTP.GET);
 		httpReq.setURI(uri);
 		HTTPResponse httpRes = httpReq.post(host, port);
@@ -121,6 +128,14 @@ public abstract class Parser
 		} catch (Exception e) {
 			throw new ParserException(e);
 		}
+	}
+	
+	public void setConnectTimeout(int timeout) {
+		connectTimeout = timeout;
+	}
+	
+	public void setReadTimeout(int timeout) {
+		readTimeout = timeout;
 	}
 
 }
