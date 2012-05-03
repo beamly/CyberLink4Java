@@ -23,6 +23,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 import org.cybergarage.upnp.*;
+import org.cybergarage.util.Debug;
 
 public class SSDPSearchResponseSocket extends HTTPUSocket implements Runnable
 {
@@ -74,8 +75,15 @@ public class SSDPSearchResponseSocket extends HTTPUSocket implements Runnable
 			SSDPPacket packet = receive();
 			if (packet == null)
 				break;
-			if (ctrlPoint != null)
-				ctrlPoint.searchResponseReceived(packet); 
+			
+			if (ctrlPoint != null) {
+				try {
+					ctrlPoint.searchResponseReceived(packet); 
+				} catch(Exception ex) {
+					Debug.warning(ex);
+					ex.printStackTrace();
+				}
+			}
 		}
 	}
 	

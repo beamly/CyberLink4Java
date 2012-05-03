@@ -235,11 +235,11 @@ public class ControlPoint implements HTTPRequestListener
 		devNodeList.add(rootNode);
 	}
 
-	private synchronized void addDevice(SSDPPacket ssdpPacket)
+	private void addDevice(SSDPPacket ssdpPacket)
 	{
 		if (ssdpPacket.isRootDevice() == false)
 			return;
-			
+
 		String usn = ssdpPacket.getUSN();
 		String udn = USN.getUDN(usn);
 		Device dev = getDevice(udn);
