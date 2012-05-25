@@ -26,6 +26,8 @@ import org.cybergarage.upnp.*;
 
 public class SSDPSearchResponseSocketList extends Vector 
 {
+	private static final long serialVersionUID = 1L;
+
 	////////////////////////////////////////////////
 	//	Constructor
 	////////////////////////////////////////////////

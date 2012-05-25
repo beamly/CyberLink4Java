@@ -19,6 +19,8 @@ import java.util.Vector;
 
 public class AttributeList extends Vector 
 {
+	private static final long serialVersionUID = 1L;
+
 	public AttributeList() 
 	{
 	}

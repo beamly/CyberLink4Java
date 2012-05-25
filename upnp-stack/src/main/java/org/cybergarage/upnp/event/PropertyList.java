@@ -19,6 +19,8 @@ import java.util.*;
 
 public class PropertyList extends Vector 
 {
+	private static final long serialVersionUID = 1L;
+
 	////////////////////////////////////////////////
 	//	Constants
 	////////////////////////////////////////////////

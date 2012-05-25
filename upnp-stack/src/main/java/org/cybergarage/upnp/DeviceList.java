@@ -19,6 +19,8 @@ import java.util.Vector;
 
 public class DeviceList extends Vector 
 {
+	private static final long serialVersionUID = 1L;
+
 	////////////////////////////////////////////////
 	//	Constants
 	////////////////////////////////////////////////

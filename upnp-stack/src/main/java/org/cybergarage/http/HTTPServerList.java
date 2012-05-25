@@ -28,6 +28,8 @@ public class HTTPServerList extends Vector
 	////////////////////////////////////////////////
 	//	Constructor
 	////////////////////////////////////////////////
+
+	private static final long serialVersionUID = 1L;
 	
 	private InetAddress[] binds = null;
 	private int port = Device.HTTP_DEFAULT_PORT;

@@ -52,8 +52,8 @@ public class XercesParser extends org.cybergarage.xml.Parser
 			
 		String domNodeName = domNode.getNodeName();
 		String domNodeValue = domNode.getNodeValue();
-		NamedNodeMap attrs = domNode.getAttributes(); 
-		int arrrsLen = (attrs != null) ? attrs.getLength() : 0;
+		// NamedNodeMap attrs = domNode.getAttributes(); 
+		// int arrrsLen = (attrs != null) ? attrs.getLength() : 0;
 
 //		Debug.message("[" + rank + "] ELEM : " + domNodeName + ", " + domNodeValue + ", type = " + domNodeType + ", attrs = " + arrrsLen);
 

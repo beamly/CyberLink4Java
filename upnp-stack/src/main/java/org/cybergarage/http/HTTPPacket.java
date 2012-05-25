@@ -725,7 +725,7 @@ public class HTTPPacket
 		// Skip bytes
 		if (strToken.hasMoreTokens() == false)
 			return range;
-		String bytesStr = strToken.nextToken(" ");
+		/*String bytesStr = */strToken.nextToken(" ");
 		// Get first-byte-pos
 		if (strToken.hasMoreTokens() == false)
 			return range;

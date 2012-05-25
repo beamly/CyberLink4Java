@@ -19,6 +19,8 @@ import java.util.Vector;
 
 public class ListenerList extends Vector
 {
+	private static final long serialVersionUID = 1L;
+
 	public boolean add(Object obj)
 	{
 		if (0 <= indexOf(obj))

@@ -26,6 +26,8 @@ import org.cybergarage.upnp.device.SearchListener;
 
 public class SSDPSearchSocketList extends Vector 
 {
+	private static final long serialVersionUID = 1L;
+
 	////////////////////////////////////////////////
 	//	Constructor
 	////////////////////////////////////////////////

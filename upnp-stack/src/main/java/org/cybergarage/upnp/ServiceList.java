@@ -21,6 +21,8 @@ import java.util.Vector;
 
 public class ServiceList extends Vector 
 {
+	private static final long serialVersionUID = 1L;
+
 	////////////////////////////////////////////////
 	//	Constants
 	////////////////////////////////////////////////

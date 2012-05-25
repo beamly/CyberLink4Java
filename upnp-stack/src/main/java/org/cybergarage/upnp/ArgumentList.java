@@ -19,6 +19,8 @@ import java.util.Vector;
 
 public class ArgumentList extends Vector 
 {
+	private static final long serialVersionUID = 1L;
+
 	////////////////////////////////////////////////
 	//	Constants
 	////////////////////////////////////////////////

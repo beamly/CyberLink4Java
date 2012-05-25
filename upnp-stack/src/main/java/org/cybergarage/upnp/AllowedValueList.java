@@ -22,6 +22,8 @@ import java.util.Vector;
 
 public class AllowedValueList extends Vector
 {
+	private static final long serialVersionUID = 1L;
+
 	////////////////////////////////////////////////
 	//	Constants
 	////////////////////////////////////////////////

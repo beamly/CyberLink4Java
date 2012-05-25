@@ -115,7 +115,6 @@ public class NotifyRequest extends SOAPRequest
 
 	public boolean setRequest(Subscriber sub, String varName, String value)
 	{
-		String callback = sub.getDeliveryURL();
 		String sid = sub.getSID();
 		long notifyCnt = sub.getNotifyCount();
 		String host = sub.getDeliveryHost();
@@ -154,7 +153,7 @@ public class NotifyRequest extends SOAPRequest
 		
 		return propSetNode;
 	}
-	
+	/*
 	private Node getVariableNode()
 	{
 		Node rootNode = getEnvelopeNode();
@@ -167,6 +166,7 @@ public class NotifyRequest extends SOAPRequest
 			return null;
 		return propNode.getNode(0);
 	}
+	*/
 
 	// Thanks for Giordano Sassaroli <sassarol@cefriel.it> (09/08/03)
 	private Property getProperty(Node varNode) 

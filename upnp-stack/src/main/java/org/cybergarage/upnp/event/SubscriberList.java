@@ -21,6 +21,8 @@ import java.util.*;
 
 public class SubscriberList extends Vector 
 {
+	private static final long serialVersionUID = 1L;
+
 	////////////////////////////////////////////////
 	//	Constructor
 	////////////////////////////////////////////////

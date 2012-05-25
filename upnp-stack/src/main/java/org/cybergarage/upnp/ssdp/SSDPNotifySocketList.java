@@ -24,6 +24,8 @@ import org.cybergarage.upnp.*;
 
 public class SSDPNotifySocketList extends Vector 
 {
+	private static final long serialVersionUID = 1L;
+
 	////////////////////////////////////////////////
 	//	Constructor
 	////////////////////////////////////////////////

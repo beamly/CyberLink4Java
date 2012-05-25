@@ -190,5 +190,9 @@ public class SSDPSearchSocket extends HTTPMUSocket implements Runnable
 		
 		deviceSearchThread = null;
 	}
+	
+	public boolean isUsingIPv6() {
+		return useIPv6Address;
+	}
 }
 

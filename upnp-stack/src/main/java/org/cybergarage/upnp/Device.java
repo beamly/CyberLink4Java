@@ -102,7 +102,6 @@ import java.net.InetAddress;
 import java.net.URL;
 import java.util.Calendar;
 
-import org.cybergarage.http.HTTP;
 import org.cybergarage.http.HTTPRequest;
 import org.cybergarage.http.HTTPResponse;
 import org.cybergarage.http.HTTPServerList;
